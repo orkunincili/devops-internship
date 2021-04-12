@@ -128,7 +128,7 @@ server.context-path=/Bitbucket
 
 ````
 Then problem solved.
-I got help [here](https://confluence.atlassian.com/adminjiraserver073/connecting-jira-applications-to-postgresql-861253040.html) and [here](https://confluence.atlassian.com/adminjiraserver073/jira-application-home-directory-861253888.html).
+I got help from [here](https://confluence.atlassian.com/adminjiraserver073/connecting-jira-applications-to-postgresql-861253040.html) and [here](https://confluence.atlassian.com/adminjiraserver073/jira-application-home-directory-861253888.html).
 
 **4)** Script
 
@@ -137,7 +137,7 @@ First of all you should **requirements.txt**:
 ````
    pip install -r requirements.txt
 ````
-After that you must run create_confing.py for create confing file.It will want
+After that you must run **create_confing.py** for create confing file.It will want
 you your Jira and Bitbucket usernames and passwords.
 
 Finally you can run **devops-internship.py**
