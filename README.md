@@ -5,7 +5,7 @@
 **1.** Installation Jira and Bitbucket for Ubuntu 20.04<br>
 **2.** Changing base urls<br>
 **3.** Possible problems<br>
-3a. **Error:** Unsupported<br>
+3a. **Error:** Unsupported database<br>
 3b. **Mistake:** If we carelessly delete the database(like me)<br>
 **4.** Script<br>
 
