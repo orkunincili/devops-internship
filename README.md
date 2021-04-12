@@ -63,7 +63,7 @@ for me it's **/home/orkun/bitbucket-home/shared/**
 
 **3)** Add this line:
 ````
-    server.context-path=/bitbucket
+    server.context-path=/Bitbucket
 ````
 
 **4)** Save and exit.
