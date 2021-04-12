@@ -76,7 +76,8 @@ PostgreSQL 12 is not supported. Unfortunately,downgrading [PostgreSQL is not sup
 I removed PostgreSQL in my computer get help from [here](https://askubuntu.com/questions/32730/how-to-remove-postgres-from-my-installation).Then I reinstalled supported PostgresSQL version(9.6). Then create a new database.
 
 But then I faced new problem. I could not connect to Jira and Bitbucket.
-###For Jira
+
+### For Jira
 I must edited **db.config.xml** because my old database information still there. I became a root user and opened the dbconfig.xml.This file is in the **Jira home directory**.
 ````
    /var/atlassian/application-data/jira
@@ -112,7 +113,7 @@ and then I have arranged the places I marked with **X** according to the new dat
 ````
 Then I restarted the Jira.
 
-###For Bitbucket
+### For Bitbucket
 
 In **<bitbucket-home-directory>/shared/bitbucket.properties**,
 I changed the places marked with **X** with the new database username and password.
