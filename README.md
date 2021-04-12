@@ -138,4 +138,4 @@ First of all you should **requirements.txt**:
 After that you must run create_confing.py for create confing file.It will want
 you your Jira and Bitbucket usernames and passwords.
 
-Finally you can run devops-internship.py
+Finally you can run **devops-internship.py**
