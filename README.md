@@ -35,7 +35,9 @@ I changed base urls while I set up Jira and Bitbucket but both of them gave me t
     [Jira_INSTALLATION]/conf/server.xml
 ````
 (for me server.xml is in **/opt/atlassian/jira/conf/**)
+
 **3)** Open the server.xml and edit **<Context>** like this.
+    
 ````
     <Context path="/JIRA" docBase="${catalina.home}/atlassian-jira" reloadable="false" useHttpOnly="true">
 ````
