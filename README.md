@@ -5,7 +5,7 @@
 **1.** Installation Jira and Bitbucket for Ubuntu 20.04<br>
 **2.** Changing base urls<br>
 **3.** Possible problems<br>
-3a. **Error:** Unsupported<br>
+3a. **Error:** Unsupported database<br>
 3b. **Mistake:** If we carelessly delete the database(like me)<br>
 **4.** Script<br>
 
@@ -35,7 +35,9 @@ I changed base urls while I set up Jira and Bitbucket but both of them gave me t
     [Jira_INSTALLATION]/conf/server.xml
 ````
 (for me server.xml is in **/opt/atlassian/jira/conf/**)
+
 **3)** Open the server.xml and edit **<Context>** like this.
+    
 ````
     <Context path="/JIRA" docBase="${catalina.home}/atlassian-jira" reloadable="false" useHttpOnly="true">
 ````
@@ -61,7 +63,7 @@ for me it's **/home/orkun/bitbucket-home/shared/**
 
 **3)** Add this line:
 ````
-    server.context-path=/bitbucket
+    server.context-path=/Bitbucket
 ````
 
 **4)** Save and exit.
@@ -76,7 +78,8 @@ PostgreSQL 12 is not supported. Unfortunately,downgrading [PostgreSQL is not sup
 I removed PostgreSQL in my computer get help from [here](https://askubuntu.com/questions/32730/how-to-remove-postgres-from-my-installation).Then I reinstalled supported PostgresSQL version(9.6). Then create a new database.
 
 But then I faced new problem. I could not connect to Jira and Bitbucket.
-####For Jira
+
+### For Jira
 I must edited **db.config.xml** because my old database information still there. I became a root user and opened the dbconfig.xml.This file is in the **Jira home directory**.
 ````
    /var/atlassian/application-data/jira
@@ -112,7 +115,7 @@ and then I have arranged the places I marked with **X** according to the new dat
 ````
 Then I restarted the Jira.
 
-####For Bitbucket
+### For Bitbucket
 
 In **<bitbucket-home-directory>/shared/bitbucket.properties**,
 I changed the places marked with **X** with the new database username and password.
@@ -125,7 +128,7 @@ server.context-path=/Bitbucket
 
 ````
 Then problem solved.
-I got help [here](https://confluence.atlassian.com/adminjiraserver073/connecting-jira-applications-to-postgresql-861253040.html) and [here](https://confluence.atlassian.com/adminjiraserver073/jira-application-home-directory-861253888.html).
+I got help from [here](https://confluence.atlassian.com/adminjiraserver073/connecting-jira-applications-to-postgresql-861253040.html) and [here](https://confluence.atlassian.com/adminjiraserver073/jira-application-home-directory-861253888.html).
 
 **4)** Script
 
@@ -134,9 +137,10 @@ First of all you should **requirements.txt**:
 ````
    pip install -r requirements.txt
 ````
-After that you must run create_confing.py for create confing file.It will want
+After that you must run **create_confing.py** for create confing file.It will want
 you your Jira and Bitbucket usernames and passwords.
 
+<<<<<<< HEAD
 Finally you can run ***devops-internship.py***
 
 
@@ -145,3 +149,6 @@ I connect to API, get projects from Jira.
 If the project in Jira is not in Bitbucket, script add it.
 If there is error, a warning messages show up that say you should look log file
 Errors are written to the log file.
+=======
+Finally you can run **devops-internship.py**
+>>>>>>> 3cbd06bad497079b6585e4a5ce3f94d1a3128e7c

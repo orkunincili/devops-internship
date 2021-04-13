@@ -35,6 +35,3 @@ print("\n")
 if err:
     """Warning message stating that if there is an error, it has written it to the log file."""
     print("WARNING - Found error(s), you may want to check 'app.log'.")
-
-#"""Listing projects in Bitbucket"""
-#print(bitbucket_api.projects.list())
