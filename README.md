@@ -144,10 +144,10 @@ you your Jira and Bitbucket usernames and passwords.
 Finally you can run ***devops-internship.py***
 
 
-I used two Python library that allows me to use the API for [Jira](https://jira.readthedocs.io/en/latest/) and [Bitbucket](https://stashy.readthedocs.io/en/latest/).
-I connect to API, get projects from Jira.
-If the project in Jira is not in Bitbucket, script add it.
-If there is error, a warning messages show up that say you should look log file
+I used two Python library that allows me to use the API for [Jira](https://jira.readthedocs.io/en/latest/) and [Bitbucket](https://stashy.readthedocs.io/en/latest/).<br>
+I connect to API, get projects from Jira.<br>
+If the project in Jira is not in Bitbucket, script add it.<br>
+If there is error, a warning messages show up that say you should look log file.<br>
 Errors are written to the log file.
 
 Finally you can run **devops-internship.py**
