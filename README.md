@@ -48,25 +48,31 @@ I get help from [here](https://confluence.atlassian.com/adminjiraserver/configur
 ### For Bitbucket:
 
 **1)** To the command line for stop Bitbucket:
+
 ````
     <installation directory>/bin/stop-bitbucket.sh
 ````
-My installation directory is **/opt/atlassian/bitbucket/7.12.0/*
+
+My installation directory is **/opt/atlassian/bitbucket/7.12.0/**
 
 **2)** Go to **bitbucket.properties** and open it.
 (If only Bitbucket version 5.0 or later.More info [here](https://confluence.atlassian.com/kb/proxying-atlassian-server-applications-with-apache-http-server-mod_proxy_http-806032611.html) and [here](https://confluence.atlassian.com/bitbucketserver/change-bitbucket-s-context-path-776640153.html))
+
 ````
     <bitbucket-home-directory>/shared/bitbucket.properties
 ````
+
 for me it's **/var/atlassian/application-data/bitbucket/**
 
 
 **3)** Add this line:
+
 ````
     server.context-path=/Bitbucket
 ````
 
 **4)** Save and exit.
+
 
 ## Possible problems:
 
@@ -83,10 +89,13 @@ But then I faced new problem. I could not connect to Jira and Bitbucket.
 
 ### For Jira
 I must edited **db.config.xml** because my old database information still there. I became a root user and opened the dbconfig.xml.This file is in the **Jira home directory**.
+
 ````
    /var/atlassian/application-data/jira
 ````
+
 and then I have arranged the places I marked with **X** according to the new database and user.
+
 ````
 <?xml version="1.0" encoding="UTF-8"?>
 
@@ -115,12 +124,14 @@ and then I have arranged the places I marked with **X** according to the new dat
 </jira-database-config>
 
 ````
+
 Then I restarted the Jira.
 
 ### For Bitbucket
 
 In **<bitbucket-home-directory>/shared/bitbucket.properties**,
 I changed the places marked with **X** with the new database username and password.
+
 ````
 jdbc.driver=org.postgresql.Driver
 jdbc.url=jdbc:postgresql://localhost:5432/XXXXX?targetServerType=master
@@ -129,8 +140,11 @@ jdbc.password=XXXXXX
 server.context-path=/Bitbucket
 
 ````
+
 Then problem solved.
+
 I got help from [here](https://confluence.atlassian.com/adminjiraserver073/connecting-jira-applications-to-postgresql-861253040.html) and [here](https://confluence.atlassian.com/adminjiraserver073/jira-application-home-directory-861253888.html).
+
 
 **4)** Script
 
@@ -139,11 +153,9 @@ First of all you should **requirements.txt**:
 ````
    pip install -r requirements.txt
 ````
+
 After that you must run **create_confing.py** for create confing file.It will want
 you your Jira and Bitbucket usernames and passwords.
-
-
-Finally you can run ***devops-internship.py***
 
 
 I used two Python library that allows me to use the API for [Jira](https://jira.readthedocs.io/en/latest/) and [Bitbucket](https://stashy.readthedocs.io/en/latest/).<br>
