@@ -7,7 +7,6 @@
 **3.** Possible problems<br>
 3a. **Error:** Unsupported database<br>
 3b. **Mistake:** If we carelessly delete the database(like me)<br>
-3c. **Mistake:** If you forget Jira password<br>
 **4.** Script<br>
 
 
