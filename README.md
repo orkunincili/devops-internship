@@ -7,6 +7,7 @@
 **3.** Possible problems<br>
 3a. **Error:** Unsupported database<br>
 3b. **Mistake:** If we carelessly delete the database(like me)<br>
+3c. **Mistake:** If you forget Jira password<br>
 **4.** Script<br>
 
 
@@ -49,16 +50,16 @@ I get help from [here](https://confluence.atlassian.com/adminjiraserver/configur
 
 **1)** To the command line for stop Bitbucket:
 ````
-    <installation directory>/bin/stop-jira.sh
+    <installation directory>/bin/stop-bitbucket.sh
 ````
-My installation directory is **/home/orkun/temp/atlassian-bitbucket-7.11.2/**
+My installation directory is **/opt/atlassian/bitbucket/7.12.0/*
 
 **2)** Go to **bitbucket.properties** and open it.
 (If only Bitbucket version 5.0 or later.More info [here](https://confluence.atlassian.com/kb/proxying-atlassian-server-applications-with-apache-http-server-mod_proxy_http-806032611.html) and [here](https://confluence.atlassian.com/bitbucketserver/change-bitbucket-s-context-path-776640153.html))
 ````
     <bitbucket-home-directory>/shared/bitbucket.properties
 ````
-for me it's **/home/orkun/bitbucket-home/shared/**
+for me it's **/var/atlassian/application-data/bitbucket/**
 
 
 **3)** Add this line:
@@ -74,6 +75,8 @@ for me it's **/home/orkun/bitbucket-home/shared/**
 
 I had PostgreSQL version 12.6 on my computer. After installation finished I learned
 PostgreSQL 12 is not supported. Unfortunately,downgrading [PostgreSQL is not supported](https://dba.stackexchange.com/questions/224991/downgrading-postgresql-10-to-9-4).
+
+#### Mistake: Deleting database
 
 I removed PostgreSQL in my computer get help from [here](https://askubuntu.com/questions/32730/how-to-remove-postgres-from-my-installation).Then I reinstalled supported PostgresSQL version(9.6). Then create a new database.
 
